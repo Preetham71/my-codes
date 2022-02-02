@@ -1,0 +1,21 @@
+//coin change problem
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int a[10]={2000,500,200,100,50,20,10,5,2,1};   // take the notes availaable in an array from higher to lower because it helps us to calculate least no. of notes
+    int n,b=0;
+    cin>>n;                                        //take the input for calculating change
+    int m= sizeof(a)/sizeof(a[0]);                 //calculate size of array
+    for(int i=0;i<m;i++)
+    {   if(n==0)        
+        break;
+        b=b+ (n/a[i]);                             //calculating and adding the change with available elements of the array
+        n= n% a[i];                                // calculating the amount remaining after getting the change after divviding with one element
+    }
+    cout<<b<<endl;
+    
+
+    return 0;
+}
